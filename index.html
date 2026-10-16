@@ -7,303 +7,282 @@
 <meta name="description" content="Delia Blanco is a Microsoft 365 Copilot MVP who didn’t start in tech. She helps people learn AI, build with it, and find their people.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#040523; --blue:#0A53FF; --purple:#7B2CFF; --orange:#FF6B2E; --yellow:#FFE75C; --teal:#00C2A8;
-  --t-yellow:#FFF1A3; --t-teal:#B8F2E9; --t-orange:#FFD3C0; --t-purple:#E2D3FF; --t-blue:#D2E1FF;
-  --muted:#46496B;
-  --hand:"Caveat","Segoe Print","Bradley Hand",cursive;
+  --t-blue:#CFE0FF; --t-purple:#E0D0FF; --t-orange:#FFD2BF; --mist:#F4F6FF; --muted:#454868;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:17px;overflow-x:hidden}
+body{font-family:Inter,system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:18px;overflow-x:hidden}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-h1,h2,h3{line-height:1.05;letter-spacing:-.025em;font-weight:900}
-h2{font-size:clamp(32px,5vw,52px);max-width:16ch}
-p{max-width:60ch}
-.hand{font-family:var(--hand);font-weight:700;line-height:1.1}
+:focus-visible{outline:4px solid var(--yellow);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-weight:900;letter-spacing:-.035em;line-height:.98}
+h2{font-size:clamp(36px,6vw,68px);max-width:15ch}
+p{max-width:58ch}
+.lead{font-size:21px;margin-top:20px;line-height:1.5}
 
-/* little hand-drawn squiggle used as a divider */
-.squiggle{height:14px;margin:0 auto;max-width:1080px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='14' viewBox='0 0 60 14'%3E%3Cpath d='M0 7 Q15 -2 30 7 T60 7' fill='none' stroke='%237B2CFF' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center}
+.btn{display:inline-block;font-weight:600;font-size:18px;padding:16px 30px;border-radius:999px;text-decoration:none;background:var(--yellow);color:var(--navy);transition:transform .15s}
+.btn:hover{transform:scale(1.04)}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 3px currentColor}
+.row{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 
-/* buttons */
-.btn{display:inline-block;font-weight:600;font-size:17px;padding:14px 26px;border-radius:14px;text-decoration:none;border:3px solid var(--navy);background:var(--yellow);color:var(--navy);box-shadow:4px 4px 0 var(--navy);transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--navy)}
-.btn.alt{background:#fff}
-.cta-row{display:flex;gap:16px;flex-wrap:wrap}
+/* nav sits on the blue hero */
+.hero{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:24px 0}
+.logo{font-weight:900;font-size:22px;letter-spacing:-.03em;text-decoration:none}
+.nav ul{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
+.nav ul a{font-size:16px;font-weight:500;text-decoration:none;padding:6px 0;border-bottom:3px solid transparent}
+.nav ul a:hover{border-color:var(--yellow)}
 
-/* header */
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 0}
-.logo{font-family:var(--hand);font-weight:700;font-size:34px;text-decoration:none}
-.nav ul{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
-.nav ul a{font-weight:500;font-size:16px;text-decoration:none}
-.nav ul a:hover{text-decoration:underline wavy var(--purple);text-underline-offset:6px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;padding:40px 0 0}
+.hero h1{font-size:clamp(52px,9.2vw,112px);padding-bottom:20px}
+.hero .lead{color:#E3EAFF;max-width:36ch}
+.hero .row{margin-bottom:84px}
 
-/* hero */
-.hero{position:relative;padding:36px 0 84px;background:
-  radial-gradient(circle at 92% 12%,var(--t-purple) 0 140px,transparent 141px),
-  radial-gradient(circle at 4% 88%,var(--t-yellow) 0 120px,transparent 121px)}
-.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.hero h1{font-size:clamp(46px,7.4vw,82px)}
-.hero .sub{font-size:20px;margin:22px 0 30px;color:var(--muted)}
-.hi{display:inline-block;font-size:30px;color:var(--purple);transform:rotate(-3deg);margin-bottom:10px}
+/* arch photo frame with shapes behind */
+.arch-wrap{position:relative;height:520px}
+.sun{position:absolute;right:-30px;top:30px;width:230px;height:230px;border-radius:50%;background:var(--yellow)}
+.blob{position:absolute;left:-10px;bottom:40px;width:190px;height:190px;background:var(--orange);border-radius:62% 38% 46% 54% / 55% 45% 55% 45%}
+.arch{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(340px,86%);height:480px;border-radius:999px 999px 0 0;background:var(--t-purple);display:grid;place-items:center;text-align:center;padding:30px;color:var(--navy);font-weight:600;font-size:17px;overflow:hidden}
+.arch img{width:100%;height:100%;object-fit:cover;display:block}
 
-/* photo collage (swap placeholders for real photos) */
-.collage{position:relative;height:460px}
-.polaroid{position:absolute;background:#fff;padding:12px 12px 16px;border:2px solid var(--navy);border-radius:6px;box-shadow:6px 6px 0 rgba(4,5,35,.9);width:230px;transition:transform .2s}
-.polaroid:hover{transform:rotate(0) scale(1.03);z-index:5}
-.polaroid .ph{height:190px;display:grid;place-items:center;text-align:center;padding:14px;font-size:14px;font-weight:500;color:var(--navy);border:2px dashed rgba(4,5,35,.45)}
-.polaroid .cap{font-family:var(--hand);font-weight:700;font-size:24px;margin-top:10px;text-align:center}
-.polaroid img{display:block;width:100%;height:190px;object-fit:cover}
-.pa{left:0;top:10px;transform:rotate(-5deg)}.pa .ph{background:var(--t-blue)}
-.pb{right:0;top:0;transform:rotate(4deg)}.pb .ph{background:var(--t-teal)}
-.pc{left:90px;bottom:0;transform:rotate(-1.5deg);width:250px}.pc .ph{background:var(--t-orange)}
-.tape::before{content:"";position:absolute;top:-14px;left:50%;width:84px;height:26px;margin-left:-42px;background:rgba(255,231,92,.85);transform:rotate(-3deg)}
+section{padding:104px 0}
 
-/* sections */
-section{padding:84px 0}
-.lead{font-size:19px;color:var(--muted);margin-top:16px}
+/* story: a trail with stops */
+.story{background:#fff}
+.trail{list-style:none;position:relative;margin-top:60px;padding:0}
+.trail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:6px;margin-left:-3px;background:repeating-linear-gradient(to bottom,var(--purple) 0 16px,transparent 16px 30px);border-radius:3px}
+.stop{position:relative;width:50%;padding:0 52px 52px 0;text-align:right}
+.stop:nth-child(even){margin-left:50%;padding:0 0 52px 52px;text-align:left}
+.stop::after{content:"";position:absolute;top:6px;right:-14px;width:28px;height:28px;border-radius:50%;background:var(--c,var(--blue));border:6px solid #fff;box-shadow:0 0 0 3px var(--c,var(--blue))}
+.stop:nth-child(even)::after{right:auto;left:-14px}
+.stop h3{font-size:clamp(24px,3vw,34px);letter-spacing:-.025em}
+.stop p{color:var(--muted);font-size:17px;margin-top:6px;display:inline-block}
+.stop:nth-child(1){--c:var(--blue)}.stop:nth-child(2){--c:var(--teal)}.stop:nth-child(3){--c:var(--orange)}
+.stop:nth-child(4){--c:var(--purple)}.stop:nth-child(5){--c:var(--blue)}
+.stop.now{--c:var(--orange);padding-bottom:0}
+.stop.now h3{background:var(--yellow);display:inline-block;padding:6px 14px;border-radius:12px}
 
-/* path as index cards */
-.cards{display:flex;flex-wrap:wrap;gap:18px;margin-top:40px}
-.index{width:200px;min-height:130px;padding:18px 16px;background:#fff;border:2px solid var(--navy);border-radius:4px;box-shadow:4px 4px 0 var(--navy);background-image:repeating-linear-gradient(transparent 0 25px,#cfd6f5 25px 26px);font-weight:600;line-height:26px}
-.index span{display:block;font-family:var(--hand);font-weight:700;font-size:22px;line-height:1.1;color:var(--purple);margin-top:6px}
-.index:nth-child(odd){transform:rotate(-1.6deg)}.index:nth-child(even){transform:rotate(1.4deg);margin-top:14px}
-.index.now{background-color:var(--t-yellow);background-image:none;line-height:1.4}
-.index.now span{color:var(--orange)}
-.story .lead + .lead{margin-top:10px}
+/* four ways in: full-width bands */
+.band{padding:56px 0;color:var(--navy)}
+.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.band h3{font-size:clamp(64px,13vw,150px);letter-spacing:-.05em}
+.band p{font-size:20px}
+.band a{display:inline-block;margin-top:14px;font-weight:600;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+.b1{background:var(--teal)}.b2{background:var(--orange)}.b3{background:var(--yellow)}
+.b4{background:var(--purple);color:#fff}
+.band:hover h3{transform:translateX(10px)}
+.band h3{transition:transform .25s}
+.ways-intro{padding:104px 0 56px;background:var(--mist)}
 
-/* four ways in: sticky notes */
-.ways{background:var(--t-blue);border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
-.notes{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:48px}
-.sticky{position:relative;padding:34px 22px 24px;min-height:300px;box-shadow:6px 8px 0 rgba(4,5,35,.18);display:flex;flex-direction:column;gap:10px;border-radius:3px}
-.sticky::before{content:"";position:absolute;top:-12px;left:50%;width:70px;height:24px;margin-left:-35px;background:rgba(255,255,255,.7);border:1px solid rgba(4,5,35,.12);transform:rotate(2deg)}
-.sticky h3{font-size:32px}
-.sticky p{font-size:16px}
-.sticky .hand{font-size:24px;margin-top:auto}
-.sticky a{font-weight:600;text-decoration:underline wavy;text-underline-offset:5px}
-.s1{background:var(--t-yellow);transform:rotate(-2deg)}
-.s2{background:var(--t-teal);transform:rotate(1.5deg);margin-top:20px}
-.s3{background:var(--t-orange);transform:rotate(-1deg)}
-.s4{background:var(--t-purple);transform:rotate(2deg);margin-top:16px}
+/* community: three overlapping circles */
+.community{background:var(--mist)}
+.venn{display:flex;justify-content:center;margin:64px 0 40px;padding-left:60px}
+.circ{width:290px;height:290px;border-radius:50%;margin-left:-60px;display:grid;place-items:center;text-align:center;padding:30px;font-weight:900;font-size:24px;line-height:1.1;letter-spacing:-.02em;mix-blend-mode:multiply}
+.c1{background:var(--t-blue)}.c2{background:var(--t-purple)}.c3{background:var(--t-orange)}
+.desc{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.desc h3{font-size:24px;letter-spacing:-.02em;margin-bottom:8px}
+.desc p{color:var(--muted);font-size:17px}
+.big{font-size:clamp(30px,4.6vw,56px);font-weight:900;letter-spacing:-.035em;line-height:1.02;margin-top:80px;max-width:18ch}
 
-/* community: name tags */
-.community{background:var(--navy);color:#fff}
-.community .lead{color:#CBD0F5}
-.tags{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.tag{background:#fff;color:var(--navy);border-radius:12px;overflow:hidden;box-shadow:0 0 0 3px var(--yellow)}
-.tag header{background:var(--c);color:#fff;text-align:center;padding:10px;font-weight:600;font-size:15px}
-.tag .name{font-family:var(--hand);font-weight:700;font-size:38px;line-height:1.05;text-align:center;padding:26px 16px 10px}
-.tag p{padding:0 22px 26px;text-align:center;font-size:16px;color:var(--muted);margin:0 auto}
-.tag:nth-child(1){--c:var(--blue);transform:rotate(-1.5deg)}
-.tag:nth-child(2){--c:var(--purple);transform:rotate(1deg)}
-.tag:nth-child(3){--c:var(--orange);transform:rotate(-.8deg)}
-.pull{font-family:var(--hand);font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1.1;margin-top:56px;color:var(--yellow);max-width:20ch}
-
-/* work with me: a letter */
-.letter{position:relative;max-width:760px;margin:0 auto;background:#fff;border:3px solid var(--navy);box-shadow:8px 8px 0 var(--teal);padding:44px 44px 40px;border-radius:6px;transform:rotate(-.6deg)}
-.letter h2{font-size:clamp(30px,4.4vw,44px);max-width:20ch}
-.checks{list-style:none;margin:26px 0 30px;display:grid;gap:12px}
-.checks li{padding-left:40px;position:relative;font-weight:600}
-.checks li::before{content:"";position:absolute;left:0;top:3px;width:26px;height:26px;border-radius:50%;border:3px solid var(--navy);background:var(--t-teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7' fill='none' stroke='%23040523' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
-.checks span{font-weight:400;color:var(--muted);font-size:15.5px}
-.sign{font-size:34px;margin-top:26px;color:var(--purple)}
-.worksec{background:var(--t-yellow)}
+/* work with me: the questions I ask first */
+.work{background:var(--navy);color:#fff}
+.work .lead{color:#CBD0F5}
+.qs{list-style:none;margin:56px 0 0;display:grid;gap:0}
+.qs li{font-size:clamp(26px,3.8vw,44px);font-weight:900;letter-spacing:-.03em;line-height:1.1;padding:26px 0;border-top:2px solid rgba(255,255,255,.22)}
+.qs li:last-child{border-bottom:2px solid rgba(255,255,255,.22)}
+.help{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:64px;align-items:start}
+.help ul{list-style:none;display:grid;gap:14px}
+.help li{padding-left:34px;position:relative;font-weight:600}
+.help li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border-radius:50%;background:var(--teal)}
+.help li span{display:block;font-weight:400;color:#CBD0F5;font-size:16px}
 
 /* numbers */
-.nums .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
-.circle{width:200px;height:200px;margin:0 auto;border:4px solid var(--navy);border-radius:58% 42% 55% 45% / 48% 56% 44% 52%;display:grid;place-items:center;background:var(--c)}
-.circle b{font-size:52px;font-weight:900;letter-spacing:-.03em}
-.nums:nth-of-type(n) .circle{background:var(--c)}
-.n1{--c:var(--t-blue)}.n2{--c:var(--t-teal)}.n3{--c:var(--t-orange)}
-.nums p{margin:16px auto 0;font-size:16px;max-width:26ch}
+.nums{padding:84px 0}
+.nums .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.nums b{display:block;font-size:clamp(64px,10vw,120px);font-weight:900;letter-spacing:-.05em;line-height:.95}
+.nums div:nth-child(1) b{color:var(--blue)}.nums div:nth-child(2) b{color:var(--purple)}.nums div:nth-child(3) b{color:var(--orange)}
+.nums span{display:block;margin-top:10px;color:var(--muted);font-size:17px;max-width:24ch}
 
-/* postcard signup */
-.post{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;border:3px solid var(--navy);border-radius:8px;background:#fff;box-shadow:8px 8px 0 var(--navy)}
-.post .msg{padding:36px;border-right:3px dashed var(--navy)}
-.post .msg h2{font-size:clamp(28px,4vw,40px)}
-.post form{padding:36px;display:grid;gap:14px;align-content:center;background:var(--t-purple)}
-.post label{font-family:var(--hand);font-weight:700;font-size:26px}
-.post input{font:inherit;padding:14px 16px;border:3px solid var(--navy);border-radius:10px;background:#fff;width:100%}
-.post input:focus{outline:3px solid var(--blue);outline-offset:2px}
-.post button{font:inherit;cursor:pointer}
-.fine{font-size:14px;color:var(--muted)}
+/* signup */
+.signup{background:var(--yellow);padding:96px 0}
+.signup h2{max-width:14ch}
+.signup form{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap;max-width:680px}
+.signup label{position:absolute;left:-9999px}
+.signup input{flex:1 1 280px;font:inherit;padding:17px 24px;border-radius:999px;border:3px solid var(--navy);background:#fff}
+.signup button{font:inherit;font-weight:600;cursor:pointer;border:0;background:var(--navy);color:#fff;padding:17px 30px;border-radius:999px;transition:transform .15s}
+.signup button:hover{transform:scale(1.04)}
+.fine{font-size:15px;margin-top:14px}
 
-footer{background:var(--navy);color:#CBD0F5;padding:44px 0;margin-top:84px}
+footer{background:var(--navy);color:#CBD0F5;padding:44px 0;font-size:16px}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-footer a{margin-right:20px}
-footer .hand{font-size:30px;color:var(--yellow)}
+footer b{color:#fff;font-size:20px;letter-spacing:-.02em}
+footer a{margin-right:22px}
 
 @media (max-width:900px){
-  .hero .wrap{grid-template-columns:1fr}
-  .collage{height:420px;max-width:420px;margin:0 auto;width:100%}
-  .notes,.tags,.nums .wrap{grid-template-columns:1fr 1fr}
-  .post{grid-template-columns:1fr}.post .msg{border-right:0;border-bottom:3px dashed var(--navy)}
+  .hero-grid,.band .wrap,.help{grid-template-columns:1fr}
+  .arch-wrap{height:440px}.arch{height:400px}
+  .hero .row{margin-bottom:40px}
+  .desc,.nums .wrap{grid-template-columns:1fr}
+  section{padding:76px 0}
 }
-@media (max-width:560px){
-  .notes,.tags,.nums .wrap{grid-template-columns:1fr}
-  .s2,.s4{margin-top:0}
-  .index{width:100%}
-  .letter{padding:30px 22px}
-  .polaroid{width:190px}.polaroid .ph,.polaroid img{height:150px}.pc{left:50px;width:210px}
+@media (max-width:640px){
+  .trail::before{left:12px}
+  .stop,.stop:nth-child(even){width:100%;margin-left:0;padding:0 0 40px 48px;text-align:left}
+  .stop::after,.stop:nth-child(even)::after{left:-2px;right:auto}
+  .venn{flex-direction:column;align-items:center;padding:0}
+  .circ{margin:-34px 0 0}
+  .circ:first-child{margin-top:0}
 }
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}.btn,.polaroid{transition:none}
+  html{scroll-behavior:auto}.btn,.band h3,.signup button{transition:none}
+  .btn:hover,.signup button:hover{transform:none}.band:hover h3{transform:none}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="#top">Delia Blanco</a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="#learn">Learn</a></li>
-        <li><a href="#learn">Build</a></li>
-        <li><a href="#learn">Grow</a></li>
-        <li><a href="#community">Connect</a></li>
-        <li><a href="#work">Work With Me</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
+<header class="hero">
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="#top">Delia Blanco</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#ways">Learn</a></li>
+          <li><a href="#ways">Build</a></li>
+          <li><a href="#ways">Grow</a></li>
+          <li><a href="#community">Connect</a></li>
+          <li><a href="#work">Work With Me</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero-grid" id="top">
+      <div>
+        <h1>There is a place for you in what’s next.</h1>
+        <p class="lead">I’m Delia Blanco. I didn’t start in tech, and I help people learn AI, build with it, and find their people.</p>
+        <div class="row">
+          <a class="btn" href="#ways">Start learning</a>
+          <a class="btn line" href="#community">Meet the community</a>
+        </div>
+      </div>
+      <!-- Replace the text inside .arch with <img src="your-photo.jpg" alt="Delia Blanco at a Copilot Collective event"> -->
+      <div class="arch-wrap" aria-hidden="false">
+        <div class="sun" aria-hidden="true"></div>
+        <div class="blob" aria-hidden="true"></div>
+        <div class="arch">Your photo here: you, mid-laugh, at a build night</div>
+      </div>
+    </div>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap">
-      <div>
-        <div class="hi hand">Hi, I’m Delia!</div>
-        <h1 id="hero-title">There is a place for you in what’s next.</h1>
-        <p class="sub">I didn’t start my career in tech. I taught myself, found my people, and now I help others learn AI, build with it, and feel like they belong in the room.</p>
-        <div class="cta-row">
-          <a class="btn" href="#learn">Start learning</a>
-          <a class="btn alt" href="#community">Meet the community</a>
-        </div>
-      </div>
-      <!-- Replace each .ph block with <img src="your-photo.jpg" alt="..."> -->
-      <div class="collage" aria-label="Photos from community events">
-        <figure class="polaroid pa tape"><div class="ph">Your photo here: a build-along in action</div><figcaption class="cap">build night!</figcaption></figure>
-        <figure class="polaroid pb tape"><div class="ph">Your photo here: speaking or workshop</div><figcaption class="cap">on stage, nervous</figcaption></figure>
-        <figure class="polaroid pc tape"><div class="ph">Your photo here: a group shot of the community</div><figcaption class="cap">my favorite people</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <div class="squiggle" aria-hidden="true"></div>
-
+<main>
   <section class="story" id="about" aria-labelledby="about-title">
     <div class="wrap">
-      <h2 id="about-title">My path had a few plot twists.</h2>
-      <p class="lead">I taught myself, tried things, earned certifications, and found a community that made it feel less lonely. My change management background turned out to be my edge, because getting people to use AI is about people first.</p>
-      <div class="cards">
-        <div class="index">Jungle Cruise skipper<span>guiding people through an experience</span></div>
-        <div class="index">Client and account management<span>listening for what people need</span></div>
-        <div class="index">Consulting and change management<span>tools only work if people use them</span></div>
-        <div class="index">Citizen developer<span>teaching myself Power Platform</span></div>
-        <div class="index">AI Solution Architect<span>building agents and automation</span></div>
-        <div class="index now">Microsoft 365 Copilot MVP<span>helping you find your way in</span></div>
-      </div>
+      <h2 id="about-title">The trail so far.</h2>
+      <p class="lead">I taught myself, tried things, earned certifications, and found a community that made it less lonely. My change management background turned out to be my edge, because getting people to use AI is about people first.</p>
+      <ol class="trail">
+        <li class="stop"><h3>Jungle Cruise skipper</h3><p>Where I learned to guide people through an experience.</p></li>
+        <li class="stop"><h3>Client and account management</h3><p>Listening closely to what people actually need.</p></li>
+        <li class="stop"><h3>Consulting and change management</h3><p>Learning that tools only work when people use them.</p></li>
+        <li class="stop"><h3>Citizen developer</h3><p>Teaching myself Power Platform, mostly on my own.</p></li>
+        <li class="stop"><h3>AI Solution Architect</h3><p>Building agents and automation for real work.</p></li>
+        <li class="stop now"><h3>Microsoft 365 Copilot MVP</h3><p>Now helping you find your way in.</p></li>
+      </ol>
     </div>
   </section>
 
-  <section class="ways" id="learn" aria-labelledby="ways-title">
+  <div class="ways-intro" id="ways">
     <div class="wrap">
-      <h2 id="ways-title">Pick a note and start there.</h2>
-      <p class="lead">Four ways in, and they all connect. Begin wherever you are today.</p>
-      <div class="notes">
-        <article class="sticky s1">
-          <h3>Learn</h3>
-          <p>Plain-language guides for Microsoft 365 Copilot, Copilot Studio, and Power Platform, built around real workdays.</p>
-          <div class="hand">no tech degree needed</div>
-          <a href="#">Browse the guides</a>
-        </article>
-        <article class="sticky s2">
-          <h3>Build</h3>
-          <p>Make your first agent or automation, with someone beside you the whole time.</p>
-          <div class="hand">come curious, leave with something built</div>
-          <a href="#">See build-alongs</a>
-        </article>
-        <article class="sticky s3">
-          <h3>Grow</h3>
-          <p>Career paths into AI and stories from people who changed direction, like the AI Plot Twist series.</p>
-          <div class="hand">your background counts</div>
-          <a href="#">Watch the stories</a>
-        </article>
-        <article class="sticky s4">
-          <h3>Connect</h3>
-          <p>Meet other builders, find mentors, and catch me at meetups and conferences.</p>
-          <div class="hand">you are not doing this alone</div>
-          <a href="#community">Find your people</a>
-        </article>
-      </div>
+      <h2>Four ways to begin.</h2>
+      <p class="lead">Start with whichever one sounds like you today. They all lead to each other.</p>
     </div>
+  </div>
+  <section class="band b1" style="padding:56px 0">
+    <div class="wrap"><h3>Learn</h3><div><p>Plain-language guides for Microsoft 365 Copilot, Copilot Studio, and Power Platform, built around real workdays. No technical degree needed.</p><a href="#">Browse the guides</a></div></div>
+  </section>
+  <section class="band b2" style="padding:56px 0">
+    <div class="wrap"><h3>Build</h3><div><p>Make your first agent or automation with someone beside you the whole time. Come curious, leave with something built.</p><a href="#">See build-alongs</a></div></div>
+  </section>
+  <section class="band b3" style="padding:56px 0">
+    <div class="wrap"><h3>Grow</h3><div><p>Career paths into AI, and stories from people who changed direction, like the AI Plot Twist series. Your background counts.</p><a href="#">Watch the stories</a></div></div>
+  </section>
+  <section class="band b4" style="padding:56px 0">
+    <div class="wrap"><h3>Connect</h3><div><p>Meet other builders, find mentors, and catch me at meetups and conferences. You do not have to do this alone.</p><a href="#community">Find your people</a></div></div>
   </section>
 
   <section class="community" id="community" aria-labelledby="comm-title">
     <div class="wrap">
       <h2 id="comm-title">Nobody should have to figure this out alone.</h2>
-      <p class="lead">When I started building, I didn’t know anyone who understood Power Automate, and I didn’t know community help existed. These are the rooms I wish I had walked into back then.</p>
-      <div class="tags">
-        <div class="tag"><header>Hello, we are</header><div class="name">Copilot Collective OC</div><p>A builder-first space in Orange County. Learn together, build together, grow together.</p></div>
-        <div class="tag"><header>Hello, we are</header><div class="name">Women in Power</div><p>Skilling, mentorship, and programming for women building careers in technology.</p></div>
-        <div class="tag"><header>Hello, this is</header><div class="name">AI Plot Twist</div><p>Real conversations with people who found their way into AI on unconventional paths.</p></div>
+      <p class="lead">When I started building, I didn’t know anyone who understood Power Automate, or that community help existed. These are the rooms I wish I had walked into back then.</p>
+      <div class="venn" role="img" aria-label="Three overlapping circles: Copilot Collective OC, Women in Power, and AI Plot Twist">
+        <div class="circ c1">Copilot Collective OC</div>
+        <div class="circ c2">Women in Power</div>
+        <div class="circ c3">AI Plot Twist</div>
       </div>
-      <p class="pull">You don’t need to know everything before you begin.</p>
+      <div class="desc">
+        <div><h3>Copilot Collective OC</h3><p>A builder-first space in Orange County. Learn together, build together, grow together.</p></div>
+        <div><h3>Women in Power</h3><p>Skilling, mentorship, and programming for women building careers in technology.</p></div>
+        <div><h3>AI Plot Twist</h3><p>Real conversations with people who found their way into AI on unconventional paths.</p></div>
+      </div>
+      <p class="big">You don’t need to know everything before you begin.</p>
     </div>
   </section>
 
-  <section class="worksec" id="work" aria-labelledby="work-title">
+  <section class="work" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <div class="letter">
-        <h2 id="work-title">Bringing your team along</h2>
-        <p class="lead">If you lead a team, you already know a training session alone rarely changes how people work. I help you build the support around it, so AI becomes part of the normal day.</p>
-        <ul class="checks">
-          <li>Microsoft 365 Copilot training <span>built around each role’s real tasks</span></li>
-          <li>Sessions for executives and leaders <span>so the people at the top feel ready too</span></li>
-          <li>Copilot Studio and agent workshops <span>hands-on, for beginners and builders</span></li>
-          <li>Champion programs, job aids, and prompt libraries <span>so learning keeps going after I leave</span></li>
-          <li>Speaking and facilitation <span>keynotes, panels, and hackathons</span></li>
+      <h2 id="work-title">I start with questions.</h2>
+      <p class="lead">When a team asks me for AI training, these are the first things we talk through together.</p>
+      <ul class="qs">
+        <li>What problem are we solving?</li>
+        <li>Should this even be an agent?</li>
+        <li>Where does it fit into real work?</li>
+        <li>Will anyone actually use it?</li>
+      </ul>
+      <div class="help">
+        <div>
+          <p class="lead" style="margin-top:0">Training alone rarely changes habits, so I help build the support around it. Then AI becomes part of the normal day.</p>
+          <div class="row"><a class="btn" href="#">Tell me about your team</a></div>
+        </div>
+        <ul>
+          <li>Microsoft 365 Copilot training<span>built around each role’s real tasks</span></li>
+          <li>Sessions for executives and leaders<span>so the people at the top feel ready too</span></li>
+          <li>Copilot Studio and agent workshops<span>hands-on, for beginners and builders</span></li>
+          <li>Champion programs, job aids, prompt libraries<span>so learning keeps going after I leave</span></li>
+          <li>Speaking and facilitation<span>keynotes, panels, and hackathons</span></li>
         </ul>
-        <a class="btn" href="#">Tell me about your team</a>
-        <div class="sign hand">Talk soon, Delia</div>
       </div>
     </div>
   </section>
 
   <section class="nums" aria-label="A few numbers">
     <div class="wrap">
-      <div><div class="circle n1"><b>600%</b></div><p>growth in Copilot licenses in under a year</p></div>
-      <div><div class="circle n2"><b>700+</b></div><p>colleagues learning through the Power Up Program</p></div>
-      <div><div class="circle n3"><b>45+</b></div><p>senior leaders trained at an AI Summit</p></div>
+      <div><b>600%</b><span>growth in Copilot licenses in under a year</span></div>
+      <div><b>700+</b><span>colleagues learning through the Power Up Program</span></div>
+      <div><b>45+</b><span>senior leaders trained at an AI Summit</span></div>
     </div>
   </section>
 
-  <section aria-labelledby="signup-title">
+  <section class="signup" aria-labelledby="signup-title">
     <div class="wrap">
-      <div class="post">
-        <div class="msg">
-          <h2 id="signup-title">Try one thing this week.</h2>
-          <p class="lead">I’ll send you a starter guide with prompts to try on your own work, plus new build-alongs as they come up.</p>
-        </div>
-        <form action="#" method="post">
-          <label for="email">Where should I send it?</label>
-          <input id="email" name="email" type="email" placeholder="you@email.com" required>
-          <button class="btn" type="submit">Send me the guide</button>
-          <p class="fine">No spam. Unsubscribe anytime.</p>
-        </form>
-      </div>
+      <h2 id="signup-title">Try one thing this week.</h2>
+      <p class="lead">I’ll send a starter guide with prompts to try on your own work, plus new build-alongs as they come up.</p>
+      <form action="#" method="post">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required>
+        <button type="submit">Send me the guide</button>
+      </form>
+      <p class="fine">No spam. Unsubscribe anytime.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div><div class="hand">Come as you are.</div>© 2026 Delia Blanco</div>
+    <div><b>Delia Blanco</b><br>© 2026</div>
     <div><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Contact</a></div>
   </div>
 </footer>
